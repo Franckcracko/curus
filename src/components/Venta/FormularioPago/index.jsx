@@ -27,7 +27,7 @@ export default function FormularioPago () {
       <h1 className="text-4xl font-semibold text-center mb-4">Formulario de Pago</h1>
       <Form
         method="post"
-        action="/producto/venta/pago/new"
+        action="/curus/producto/venta/pago/new"
         className="w-[500px] px-4  md:w-[425px]  grid"
       >
         {

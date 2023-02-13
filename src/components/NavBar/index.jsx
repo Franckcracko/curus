@@ -8,7 +8,7 @@ export default function NavBar() {
   useEffect(() => {
     const locationPath = location.pathname;
     setBgColor('bg-purple-400 shadow');
-    if ((locationPath === '/') || (locationPath === '/producto')) {
+    if ((locationPath === '/curus') || (locationPath === '/curus/producto')) {
       handleScroll()
       window.addEventListener('scroll', handleScroll)
     }
@@ -32,8 +32,8 @@ export default function NavBar() {
       </div>
       <ul className="flex text-sm">
         <ListLink path={'/'}>Inicio</ListLink>
-        <ListLink path={'/producto'}>Producto</ListLink>
-        <ListLink path={'/sobre-nosotros'}>Sobre Nosotros</ListLink>
+        <ListLink path={'/curus/producto'}>Producto</ListLink>
+        <ListLink path={'/curus/sobre-nosotros'}>Sobre Nosotros</ListLink>
       </ul>
     </nav>
   )

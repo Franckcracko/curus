@@ -1,11 +1,16 @@
 import { useParams } from "react-router-dom";
 import { toCanvas, toDataURL } from "qrcode";
 import { useEffect, useState } from "react";
+import { doc, setDoc } from "firebase/firestore"; 
+import { db } from "../../services/firebase";
 const DatosPersonales = () => {
   const stylesInput = 'mb-2 border rounded p-[6px]';
 
   const { id_producto } = useParams();
   const linkPersonal = `https://curus.org/informacion/${id_producto}`;
+
+  const [user, setUser] = useState({});
+
 
   const [data, setData] = useState(false);
   const [linkDownloadQR, setLinkDownloadQR] = useState('');
@@ -45,6 +50,7 @@ const DatosPersonales = () => {
     })
     if (count === inputs.length) {
       setData(true);
+      AddInformation(inputs)
     }
   }
   function handleChange(id, event) {
@@ -56,6 +62,29 @@ const DatosPersonales = () => {
     });
     setInputs(updatedInputs);
   }
+  function addDataUser(data){
+    setUser({...user,...data})
+  }
+
+  function AddInformation(data) {
+  // const dataUsers
+  //add Data of User
+  setUser({...user,nombre:data[0].value})
+  setUser({...user,apellido_paterno:data[1].value})
+  setUser({...user,apellido_materno:data[2].value})
+  setUser({...user,tipo_sangre:data[3].value})
+  setUser({...user,telefono:data[4].value})
+  setUser({...user,telefono_casa:data[5].value})
+  setUser({...user,direccion:data[6].value})
+  console.log(user);
+  // try {
+  //   // const docRef = await setDoc(doc(db, "users", idData), dataUser);
+  //   // console.log("Document written with ID: ", docRef.id);
+  // } catch (e) {
+  //   console.error("Error adding document: ", e);
+  // }
+  
+}
   useEffect(() => {
     if (data) {
       handleCanvas();

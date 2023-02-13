@@ -12,14 +12,14 @@ import './index.css'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<Root />} >
+    <Route path='/curus' element={<Root />} >
       <Route index element={<Home />} />
 
-      <Route path="producto" element={<Producto />} />
-      <Route path="producto/venta" element={<Venta />} />
-      <Route path="producto/venta/pago" errorElement={<p className='py-20'>Error</p>} element={<FormularioPago />} />
+      <Route path="/curus/producto" element={<Producto />} />
+      <Route path="/curus/producto/venta" element={<Venta />} />
+      <Route path="/curus/producto/venta/pago" errorElement={<p className='py-20'>Error</p>} element={<FormularioPago />} />
       <Route
-        path="producto/venta/pago/new"
+        path="/curus/producto/venta/pago/new"
         action={async ({ request }) => {
           const formData = await request.formData();
           const uniqueId = getUniqueId()
@@ -32,12 +32,12 @@ const router = createBrowserRouter(
           };
           console.log(submission);
           console.log(uniqueId);
-          return redirect(`/producto/venta/pago/${uniqueId}`);
+          return redirect(`/curus/producto/venta/pago/${uniqueId}`);
         }} 
       />
 
-      <Route path="producto/venta/pago/:id_producto" element={<DatosPersonales />} />
-      <Route path="sobre-nosotros" element={<About />} />
+      <Route path="/curus/producto/venta/pago/:id_producto" element={<DatosPersonales />} />
+      <Route path="/curus/sobre-nosotros" element={<About />} />
     </Route>
   )
 );
