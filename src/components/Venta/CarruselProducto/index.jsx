@@ -5,9 +5,9 @@ const CarruselProducto = () => {
   const stylesDirection = 'cursor-pointer grid place-content-center absolute top-[45%] mx-1 z-10 rounded-full w-9 h-9 bg-white hover:bg-[#D9D9D9]'
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    { src: "/imagen_prueba.jpeg", alt: "Image 1" },
-    { src: "/feminismo.png", alt: "Image 2" },
-    { src: "/imagen_prueba.jpeg", alt: "Image 3" },
+    { src: "/pulsera_modal_1.jpg", alt: "Image 1" },
+    { src: "/pulsera_modal_2.jpg", alt: "Image 2" },
+    { src: "/pulsera_modal_3.jpg", alt: "Image 3" },
   ];
 
   const Image = ({ src, alt }) => {

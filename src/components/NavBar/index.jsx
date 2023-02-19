@@ -7,8 +7,9 @@ export default function NavBar() {
   const location = useLocation();
   useEffect(() => {
     const locationPath = location.pathname;
+    console.log(locationPath);
     setBgColor('bg-purple-400 shadow');
-    if ((locationPath === '/curus') || (locationPath === '/curus/producto')) {
+    if ((locationPath === '/curus/') || (locationPath === '/curus/producto')) {
       handleScroll()
       window.addEventListener('scroll', handleScroll)
     }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Form } from "react-router-dom";
 
-export default function FormularioPago () {
+export default function FormularioPago() {
   const [selected, setSelected] = useState('visa');
   const [inputs, setInputs] = useState([
     { id: 'nombre', label: 'Nombre', value: '', required: true },
@@ -11,7 +11,6 @@ export default function FormularioPago () {
     { id: 'numero_telefonico', label: 'Numero Telefono', value: '', type: 'tel', required: true },
   ]);
   const stylesInput = 'mb-2 text-lg border rounded p-[6px]';
-
   const handleChange = (id, event) => {
     const updatedInputs = inputs.map(input => {
       if (input.id === id) {

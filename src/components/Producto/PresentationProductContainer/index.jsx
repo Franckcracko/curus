@@ -11,8 +11,8 @@ const PresentationProductContainer =  () =>{
         </Link>
       </section>
       <section>
-        <figure>
-          <img src="/imagen_prueba.jpeg" alt="imagen sin fondo" />
+        <figure className="max-w-[325px]">
+          <img className="w-full" src="/reloj_page_presentation.png" alt="imagen sin fondo" />
         </figure>
       </section>
     </article>
