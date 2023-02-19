@@ -66,6 +66,9 @@ const router = createBrowserRouter(
       <Route path="/sobre-nosotros" element={<About />} />
     </Route>
   )
+  ,{
+    basename:'process.env.PUBLIC_URL',
+  }
 );
 
 ReactDOM.createRoot(document.getElementById('root')).render(
