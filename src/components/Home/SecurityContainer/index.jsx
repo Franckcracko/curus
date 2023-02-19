@@ -1,6 +1,3 @@
-import { Link } from "react-router-dom";
-import ButtonGhost from "../../Buttons/ButtonGhost";
-
 const SecurityContainer = function(){
   return (
     <article 
@@ -11,7 +8,7 @@ const SecurityContainer = function(){
         <p className="mb-6">
         La pulsera reloj esta pensada para situaciones en la cual la persona se encuentre en peligro, para ello tiene implementado un GPS que estara prendido las 24 horas del dia, al igual que contiene una alarma que genera un ruido acustico para alertar a las demas personas que se encuentran cerca al mismo tiempo envia una señal de auxilio a las personas cercanas que tenga configuradas desde la aplicacion de la pulsera reloj.
         </p>
-        <a href="/curus/producto" className="styles_button-base px-6 bg-transparent text-purple-500 border border-purple-500 hover:text-white  hover:shadow-md hover:bg-purple-500 transition-all ease-in-out duration-150 ">
+        <a href="/producto" className="styles_button-base px-6 bg-transparent text-purple-500 border border-purple-500 hover:text-white  hover:shadow-md hover:bg-purple-500 transition-all ease-in-out duration-150 ">
           VER MAS
         </a>
         

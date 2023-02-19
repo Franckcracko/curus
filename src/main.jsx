@@ -18,10 +18,10 @@ import swal from 'sweetalert'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/curus' element={<Root />} >
-      <Route index element={<Home />} />
+    <Route path='/' element={<Root />} >
+    <Route errorElement={<p>Error Actualizado</p>} index element={<Home />} />
 
-      <Route path="/curus/personal-information/:id_info_user"
+      <Route path="/personal-information/:id_info_user"
         element={<InfoUser />}
         errorElement={<ErrorUsuario />}
         loader={async ({ params }) => {
@@ -36,11 +36,11 @@ const router = createBrowserRouter(
           return { data };
         }} />
 
-      <Route path="/curus/producto" element={<Producto />} />
-      <Route path="/curus/producto/venta" element={<Venta />} />
-      <Route path="/curus/producto/venta/pago" errorElement={<p className='py-20'>Error</p>} element={<FormularioPago />} />
+      <Route path="/producto" element={<Producto />} />
+      <Route path="/producto/venta" element={<Venta />} />
+      <Route path="/producto/venta/pago" errorElement={<p className='py-20'>Error</p>} element={<FormularioPago />} />
       <Route
-        path="/curus/producto/venta/pago/new"
+        path="/producto/venta/pago/new"
         action={async ({ request }) => {
           await swal({
             title: "Pago realizado con éxito",
@@ -58,12 +58,12 @@ const router = createBrowserRouter(
           };
           console.log(submission);
           console.log(uniqueId);
-          return redirect(`/curus/producto/venta/pago/${uniqueId}`);
+          return redirect(`/producto/venta/pago/${uniqueId}`);
         }}
       />
 
-      <Route path="/curus/producto/venta/pago/:id_producto" element={<FormDatosPersonales />} />
-      <Route path="/curus/sobre-nosotros" element={<About />} />
+      <Route path="/producto/venta/pago/:id_producto" element={<FormDatosPersonales />} />
+      <Route path="/sobre-nosotros" element={<About />} />
     </Route>
   )
 );

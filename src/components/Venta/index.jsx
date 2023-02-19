@@ -6,7 +6,7 @@ import InformacionProducto from "./InformacionProducto";
 const Venta = () =>{
   return (
     <div className="h-screen">
-    <Link to='/curus/producto' className="font-medium absolute top-11 left-3 underline underline-offset-2  text-[#0E34FF] hover:text-[#4277FF]"> Regresar </Link>
+    <Link to='/producto' className="font-medium absolute top-11 left-3 underline underline-offset-2  text-[#0E34FF] hover:text-[#4277FF]"> Regresar </Link>
     <article className=" grid py-20 grid-cols-2">
       <CarruselProducto />
       <InformacionProducto  />
